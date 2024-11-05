@@ -1,8 +1,8 @@
-// console.log('Hello World')
-
+// Initialize both human and computer scores to 0
 let humanScore = 0;
 let computerScore = 0;
 
+// Generate computer random choice
 const getComputerChoice = () => {
     const choice = Math.floor(Math.random() * 3);
     
@@ -11,8 +11,7 @@ const getComputerChoice = () => {
     else if (choice == 2) return "scissors";
 };
 
-// console.log(getComputerChoice());
-
+// Prompt human choice using R, P, S
 const getHumanChoice = () => {
     let choice = prompt("Choose between 3 options, [R, P, S]");
 
@@ -27,8 +26,7 @@ const getHumanChoice = () => {
     return message;
 };
 
-// getHumanChoice();
-
+// Set a new play round with output result from human vs computer
 const playRound = (humanChoice, computerChoice) => {
     if (humanChoice == "rock") {
         if (computerChoice == "rock") return console.log("ties rock");
@@ -67,8 +65,7 @@ const playRound = (humanChoice, computerChoice) => {
     }
 };
 
-// playRound(getHumanChoice(), getComputerChoice());
-
+// Simulate 5 rounds of games
 const playGame = () => {
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
