@@ -90,8 +90,8 @@ buttons.forEach((button) => {
 
         let text = playRound(button.id, getComputerChoice());
 
-        if (humanScore >= 5) text += "\r\nHuman Wins!";
-        else if (computerScore >= 5) text += "\r\nComputer Wins!";
+        if (humanScore >= 5) text += `\r\nHuman Wins!\r\nScore: ${humanScore} | ${computerScore}`;
+        else if (computerScore >= 5) text += `\r\nComputer Wins!\r\nScore: ${humanScore} | ${computerScore}`;
 
         humanScore = humanScore >= 5 || computerScore >= 5 ? 0 : humanScore;
         computerScore = humanScore >= 5 || computerScore >= 5 ? 0 : computerScore;
