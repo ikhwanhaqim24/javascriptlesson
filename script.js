@@ -41,7 +41,7 @@ const playRound = (humanChoice, computerChoice) => {
     }
 
     else if (humanChoice == "paper") {
-        if (computerChoice == "paper") return console.log("ties paper");
+        if (computerChoice == "paper") return "ties paper";
         else if (computerChoice == "rock") {
             humanScore += 1;
             return "You win! [Paper] beats Rock";
@@ -53,7 +53,7 @@ const playRound = (humanChoice, computerChoice) => {
     }
 
     else if (humanChoice == "scissors") {
-        if (computerChoice == "scissors") return console.log("ties scissors");
+        if (computerChoice == "scissors") return "ties scissors";
         else if (computerChoice == "paper") {
             humanScore += 1;
             return "You win! [Scissors] beats Paper";
