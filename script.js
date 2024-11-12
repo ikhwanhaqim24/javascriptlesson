@@ -29,14 +29,14 @@ const getHumanChoice = () => {
 // Set a new play round with output result from human vs computer
 const playRound = (humanChoice, computerChoice) => {
     if (humanChoice == "rock") {
-        if (computerChoice == "rock") return console.log("ties rock");
+        if (computerChoice == "rock") return "ties rock";
         else if (computerChoice == "paper") {
             computerScore += 1;
-            return console.log("You lose! Paper beats [Rock]");
+            return "You lose! Paper beats [Rock]";
         }
         else if (computerChoice == "scissors") {
             humanScore += 1;
-            return console.log("You win! [Rock] beats Scissors");
+            return "You win! [Rock] beats Scissors";
         }
     }
 
@@ -44,11 +44,11 @@ const playRound = (humanChoice, computerChoice) => {
         if (computerChoice == "paper") return console.log("ties paper");
         else if (computerChoice == "rock") {
             humanScore += 1;
-            return console.log("You win! [Paper] beats Rock");
+            return "You win! [Paper] beats Rock";
         }
         else if (computerChoice == "scissors") {
             computerScore += 1;
-            return console.log("You lose! Scissors beats [Paper]");
+            return "You lose! Scissors beats [Paper]";
         }
     }
 
@@ -56,11 +56,11 @@ const playRound = (humanChoice, computerChoice) => {
         if (computerChoice == "scissors") return console.log("ties scissors");
         else if (computerChoice == "paper") {
             humanScore += 1;
-            return console.log("You win! [Scissors] beats Paper");
+            return "You win! [Scissors] beats Paper";
         }
         else if (computerChoice == "rock") {
             computerScore += 1;
-            return console.log("You lose! Rock beats [Scissors]");
+            return "You lose! Rock beats [Scissors]";
         }
     }
 };
@@ -79,14 +79,19 @@ const playGame = () => {
 // playGame()
 
 const buttons = document.querySelectorAll("button.btn");
+const resultText = document.querySelector(".result");
+
+resultText.textContent = "";
 
 buttons.forEach((button) => {
     // add eventlistener to button
     button.addEventListener("click", () => {
         // console.log(button.id, 'button clicked!')
 
-        playRound(button.id, getComputerChoice());
+        const text = playRound(button.id, getComputerChoice());
 
-        console.log(humanScore, computerScore);
+        // console.log(humanScore, computerScore);
+
+        resultText.textContent = text;
     });
 });
