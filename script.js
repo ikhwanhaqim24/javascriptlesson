@@ -88,10 +88,16 @@ buttons.forEach((button) => {
     button.addEventListener("click", () => {
         // console.log(button.id, 'button clicked!')
 
-        const text = playRound(button.id, getComputerChoice());
+        let text = playRound(button.id, getComputerChoice());
 
+        if (humanScore >= 5) text += "\r\nHuman Wins!";
+        else if (computerScore >= 5) text += "\r\nComputer Wins!";
+
+        humanScore = humanScore >= 5 || computerScore >= 5 ? 0 : humanScore;
+        computerScore = humanScore >= 5 || computerScore >= 5 ? 0 : computerScore;
         // console.log(humanScore, computerScore);
 
+        resultText.setAttribute('style', 'white-space: pre;');
         resultText.textContent = text;
     });
 });
