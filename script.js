@@ -76,4 +76,4 @@ const playGame = () => {
     console.log(humanScore, computerScore);
 }
 
-playGame()
+// playGame()
