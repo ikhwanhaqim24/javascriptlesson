@@ -77,3 +77,13 @@ const playGame = () => {
 }
 
 // playGame()
+
+const buttons = document.querySelectorAll("button.btn");
+
+buttons.forEach((button) => {
+    // add eventlistener to button
+
+    button.addEventListener("click", () => {
+        console.log(button.id, 'button clicked!')
+    });
+});
